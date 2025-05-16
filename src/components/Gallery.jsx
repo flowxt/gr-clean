@@ -23,8 +23,7 @@ export default function Gallery() {
     { src: '/photo/vitre-int1.jpeg', alt: 'Vitre intérieure' },
     { src: '/photo/garage-propre.jpeg', alt: 'Garage propre' },
     { src: '/photo/garage-propre2.jpeg', alt: 'Garage nettoyé' },
-    { src: '/photo/garage-1.jpeg', alt: 'Nettoyage garage' },
-    { src: '/photo/garage.jpeg', alt: 'Garage' },
+    { src: '/photo/garage-1.jpeg', alt: 'Nettoyage porte de garage' },
     { src: '/photo/mur-vitre.jpeg', alt: 'Mur vitré' },
     { src: '/photo/vitre-interieur.jpeg', alt: 'Vitre intérieure' },
   ];
