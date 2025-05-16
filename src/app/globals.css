@@ -1,26 +1,156 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #121212;
+  --foreground: #ffffff;
+  --accent: #C28638;
+  --card-bg: #1e1e1e;
+  --card-border: #2e2e2e;
+  --font-heading: var(--font-montserrat);
+  --font-body: var(--font-lora);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-accent: var(--accent);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --font-heading: var(--font-montserrat);
+  --font-body: var(--font-lora);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #C28638, #e2b06d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.cta-button {
+  background: linear-gradient(90deg, #C28638 0%, #e2b06d 100%);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #e2b06d 0%, #C28638 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.cta-button:hover::after {
+  opacity: 1;
+}
+
+/* Pour la section avant/après */
+.before-after-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.before-after-slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent);
+  cursor: ew-resize;
+  z-index: 10;
+}
+
+/* Animation pour les cartes de valeurs */
+.value-card {
+  transition: all 0.3s ease;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  border-color: var(--accent);
+}
+
+/* Gallery styles - Apple-like design */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@supports (aspect-ratio: 16/9) {
+  .aspect-w-16.aspect-h-9 {
+    aspect-ratio: 16/9;
+  }
+  
+  .aspect-w-4.aspect-h-3 {
+    aspect-ratio: 4/3;
+  }
+}
+
+@supports not (aspect-ratio: 16/9) {
+  .aspect-w-16.aspect-h-9 {
+    position: relative;
+  }
+  
+  .aspect-w-16.aspect-h-9::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(9 / 16 * 100%);
+  }
+  
+  .aspect-w-16.aspect-h-9 > * {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .aspect-w-4.aspect-h-3 {
+    position: relative;
+  }
+  
+  .aspect-w-4.aspect-h-3::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(3 / 4 * 100%);
+  }
+  
+  .aspect-w-4.aspect-h-3 > * {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 }
