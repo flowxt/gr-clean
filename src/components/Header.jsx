@@ -33,6 +33,11 @@ export default function Header() {
     { name: 'Contact', href: '#contact' }
   ];
 
+  // Fonction pour gérer l'ouverture/fermeture du menu
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-2 bg-[#121212]/95 backdrop-blur-sm shadow-lg' : 'py-4 bg-transparent'}`}>
       <div className="container mx-auto px-4">
