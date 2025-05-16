@@ -20,7 +20,6 @@ export default function ZoneIntervention() {
     'Rumilly',
     'Aix-les-Bains',
     'Albertville',
-    'Bonneville',
   ];
 
   return (
@@ -103,9 +102,21 @@ export default function ZoneIntervention() {
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 viewport={{ once: true }}
               >
-                <div className="py-3 px-4 rounded-lg text-white bg-[#1a1a1a] border border-gray-700">
-                  {city}
-                </div>
+                <motion.div 
+                  className="py-3 px-4 rounded-lg text-white bg-[#1a1a1a] border border-gray-700 transition-all duration-300 cursor-pointer overflow-hidden relative group"
+                  whileHover={{ 
+                    scale: 1.05,
+                    borderColor: "#C28638"
+                  }}
+                >
+                  <span className="relative z-10">{city}</span>
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-r from-[#C28638]/20 to-[#C28638]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: 0 }}
+                    transition={{ type: "tween", duration: 0.3 }}
+                  />
+                </motion.div>
               </motion.div>
             ))}
           </div>

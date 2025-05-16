@@ -27,8 +27,8 @@ export default function Header() {
     { name: 'Accueil', href: '#' },
     { name: 'À propos', href: '#expertise' },
     { name: 'Services', href: '#services' },
-    { name: 'Galerie', href: '#gallery' },
     { name: 'Zone d\'intervention', href: '#zone' },
+    { name: 'Galerie', href: '#gallery' },
     { name: 'FAQ', href: '#faq' },
     { name: 'Contact', href: '#contact' }
   ];

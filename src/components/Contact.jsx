@@ -60,7 +60,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-medium text-lg text-white">Téléphone</h4>
-                  <p className="text-gray-300">07 XX XX XX XX</p>
+                  <p className="text-gray-300">
+                    <a href="tel:+33689805698" className="hover:text-[#C28638] transition-colors">
+                      06 89 80 56 98
+                    </a>
+                  </p>
                 </div>
               </li>
               
@@ -69,8 +73,12 @@ export default function Contact() {
                   <FaEnvelope className="w-6 h-6 text-[#C28638]" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-lg text-white">Réponse</h4>
-                  <p className="text-gray-300">Sous 24h</p>
+                  <h4 className="font-medium text-lg text-white">Email</h4>
+                  <p className="text-gray-300">
+                    <a href="mailto:rgclean74@gmail.com" className="hover:text-[#C28638] transition-colors">
+                      rgclean74@gmail.com
+                    </a>
+                  </p>
                 </div>
               </li>
             </ul>

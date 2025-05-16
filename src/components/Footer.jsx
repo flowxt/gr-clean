@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaInstagram } from 'react-icons/fa';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -26,7 +26,15 @@ export default function Footer() {
               Experts du nettoyage professionnel à Annecy et alentours depuis plus de 15 ans.
             </p>
             <div className="flex space-x-4">
-              {/* Liens sociaux (à ajouter si nécessaire) */}
+              <a 
+                href="https://www.instagram.com/grclean74_/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-[#C28638]/20 w-10 h-10 rounded-full flex items-center justify-center border border-[#C28638] hover:bg-[#C28638]/30 transition-colors"
+                aria-label="Instagram"
+              >
+                <FaInstagram className="text-[#C28638]" />
+              </a>
             </div>
           </div>
           
@@ -70,11 +78,21 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <FaPhoneAlt className="text-[#C28638]" />
-                <span className="text-gray-400">Téléphone à ajouter</span>
+                <a 
+                  href="tel:+33689805698" 
+                  className="text-gray-400 hover:text-[#C28638] transition-colors"
+                >
+                  06 89 80 56 98
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <FaEnvelope className="text-[#C28638]" />
-                <span className="text-gray-400">Email à ajouter</span>
+                <a 
+                  href="mailto:rgclean74@gmail.com" 
+                  className="text-gray-400 hover:text-[#C28638] transition-colors"
+                >
+                  rgclean74@gmail.com
+                </a>
               </li>
             </ul>
           </div>
