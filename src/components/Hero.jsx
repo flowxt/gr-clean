@@ -34,7 +34,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/60 z-5"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-20 mt-16">
+      <div className="container mx-auto px-4 relative z-20 mt-24 sm:mt-16">
         <motion.div
           className="max-w-5xl mx-auto"
           initial={{ opacity: 0 }}
@@ -45,7 +45,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-8 text-center"
+            className="mb-8 text-center pt-12 sm:pt-0"
           >
             <span className="inline-block py-1 px-3 border border-[#C28638] text-[#C28638] text-sm tracking-wider uppercase rounded-full mb-6">
               Nettoyage professionnel à Annecy
@@ -91,7 +91,7 @@ export default function Hero() {
           </motion.div>
           
           <motion.div 
-            className="absolute bottom-5 left-1/2 transform -translate-x-1/2 cursor-pointer"
+            className="absolute bottom-5 left-1/2 transform -translate-x-1/2 cursor-pointer hidden sm:block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, y: [0, 10, 0] }}
             transition={{ 
