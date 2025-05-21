@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import SectionTag from './SectionTag';
+import Image from 'next/image';
 
 export default function Gallery() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -122,10 +123,13 @@ export default function Gallery() {
             viewport={{ once: true }}
           >
             <div className="aspect-w-16 aspect-h-9 relative">
-              <img 
+              <Image 
                 src={photos[activeIndex].src} 
                 alt={photos[activeIndex].alt}
                 className="w-full h-full object-cover transform transition-transform duration-1000 hover:scale-105"
+                fill
+                sizes="(max-width: 768px) 100vw, 1200px"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-70"></div>
             </div>
@@ -183,10 +187,12 @@ export default function Gallery() {
                     activeIndex === index ? 'ring-4 ring-[#C28638] scale-105' : 'opacity-70 grayscale-[30%]'
                   }`}
                 >
-                  <img 
+                  <Image 
                     src={photo.src}
                     alt={photo.alt}
                     className="w-full h-full object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 224px"
                   />
                 </div>
               ))}
