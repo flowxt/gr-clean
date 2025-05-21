@@ -8,6 +8,7 @@ import BeforeAfter from "@/components/BeforeAfter";
 import ZoneIntervention from "@/components/ZoneIntervention";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Gallery from "@/components/Gallery";
+import CTA from "@/components/CTA";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -24,6 +25,7 @@ export default function Home() {
         <ZoneIntervention />
         <WhyChooseUs />
         <Gallery />
+        <CTA />
         <FAQ />
         <Contact />
       </main>
