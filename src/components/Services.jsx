@@ -54,7 +54,7 @@ export default function Services() {
       title: 'Nettoyage chez les particuliers',
       description: "GR CLEAN, ce n'est pas que pour les pros. Nous intervenons aussi dans les maisons et appartements privés, à Annecy et dans un rayon de 20 km.",
       features: [
-        'Nettoyage régulier ou ponctuel',
+        'Nettoyage ponctuel',
         'Adapté aux besoins de chaque foyer',
         'Forfaits clairs, sur devis uniquement'
       ]

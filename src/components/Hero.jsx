@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaArrowDown } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function Hero() {
   const scrollToNext = () => {
@@ -10,20 +11,30 @@ export default function Hero() {
   };
 
   return (
-    <section className="h-screen flex items-center bg-[#121212] text-white relative overflow-hidden">
+    <section className="h-screen flex items-center text-white relative overflow-hidden">
       {/* Overlay de motif */}
-      <div className="absolute inset-0 opacity-10 bg-[url('/photo/pattern.png')] bg-repeat"></div>
+      <div className="absolute inset-0 opacity-10 bg-[url('/photo/pattern.png')] bg-repeat z-10"></div>
       
       {/* Cercles décoratifs */}
-      <div className="absolute right-0 top-0 w-64 h-64 rounded-full bg-[#C28638] opacity-10 -mr-20 -mt-20"></div>
-      <div className="absolute left-0 bottom-0 w-96 h-96 rounded-full bg-[#C28638] opacity-10 -ml-40 -mb-40"></div>
+      <div className="absolute right-0 top-0 w-64 h-64 rounded-full bg-[#C28638] opacity-10 -mr-20 -mt-20 z-10"></div>
+      <div className="absolute left-0 bottom-0 w-96 h-96 rounded-full bg-[#C28638] opacity-10 -ml-40 -mb-40 z-10"></div>
       
-      {/* Background image avec overlay */}
+      {/* Background image avec overlay sombre */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#121212]/70 to-[#121212] z-10"></div>
+        <div className="relative w-full h-full">
+          <Image 
+            src="/photo/vitre-ext1.jpeg" 
+            alt="Nettoyage de vitres professionnel" 
+            fill
+            priority
+            sizes="100vw"
+            style={{ objectFit: 'cover' }}
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/60 z-5"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10 mt-16">
+      <div className="container mx-auto px-4 relative z-20 mt-16">
         <motion.div
           className="max-w-5xl mx-auto"
           initial={{ opacity: 0 }}
