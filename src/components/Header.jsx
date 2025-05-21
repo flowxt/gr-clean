@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
-// Composant pour la navigation mobile - maintenant complètement séparé
+// Composant pour la navigation mobile et tablette
 function MobileNav({ isOpen, setIsOpen }) {
   const navLinks = [
     { name: 'Accueil', href: '#' },
@@ -149,8 +149,8 @@ export default function Header() {
               </span>
             </Link>
             
-            {/* Navigation - visible sur desktop */}
-            <nav className="hidden lg:flex items-center space-x-6">
+            {/* Navigation - visible sur grand desktop uniquement */}
+            <nav className="hidden xl:flex items-center space-x-6">
               {navLinks.map((link, index) => (
                 <Link
                   key={index}
@@ -168,9 +168,9 @@ export default function Header() {
               </a>
             </nav>
             
-            {/* Bouton menu mobile */}
+            {/* Bouton menu mobile/tablette */}
             <button
-              className="lg:hidden z-20 text-white focus:outline-none"
+              className="xl:hidden z-20 text-white focus:outline-none"
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
             >
@@ -180,7 +180,7 @@ export default function Header() {
         </div>
       </header>
       
-      {/* Menu mobile comme composant séparé et détaché du header */}
+      {/* Menu mobile et tablette comme composant séparé */}
       <MobileNav isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   );
