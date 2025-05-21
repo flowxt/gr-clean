@@ -12,8 +12,8 @@ export default function Hero() {
 
   return (
     <section className="h-screen flex items-center text-white relative overflow-hidden">
-      {/* Overlay de motif */}
-      <div className="absolute inset-0 opacity-10 bg-[url('/photo/pattern.png')] bg-repeat z-10"></div>
+      {/* Élément décoratif */}
+      <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-[#222222] via-black to-[#333333] z-10"></div>
       
       {/* Cercles décoratifs */}
       <div className="absolute right-0 top-0 w-64 h-64 rounded-full bg-[#C28638] opacity-10 -mr-20 -mt-20 z-10"></div>
