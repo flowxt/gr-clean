@@ -74,7 +74,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="flex items-center gap-2">
                 <FaMapMarkerAlt className="text-[#C28638]" />
-                <span className="text-gray-400">Annecy, Haute-Savoie</span>
+                <span className="text-gray-400">Sillingy, Haute-Savoie</span>
               </li>
               <li className="flex items-center gap-2">
                 <FaPhoneAlt className="text-[#C28638]" />

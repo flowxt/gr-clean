@@ -40,7 +40,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-medium text-lg text-white">Localisation</h4>
-                  <p className="text-gray-300">Basé à Annecy</p>
+                  <p className="text-gray-300">Basé à Annecy / Sillingy</p>
                 </div>
               </li>
               

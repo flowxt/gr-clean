@@ -9,8 +9,8 @@ export default function BeforeAfter() {
   const comparisons = [
     {
       id: "garage",
-      title: "Garage",
-      description: "Nettoyage complet d'un garage",
+      title: "Porte de garage",
+      description: "Nettoyage de la porte de garage",
       before: "/photo/garage.jpeg",
       after: "/photo/garage-1.jpeg"
     },

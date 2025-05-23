@@ -8,7 +8,7 @@ export default function Services() {
       id: 'vitrerie',
       icon: <FaWindowMaximize className="text-[#C28638] text-4xl" />,
       title: 'Vitrerie – Nettoyage de vitres et vitrines',
-      description: "Fenêtres, baies vitrées, vérandas, verrières, vitrines de commerces… Nous intervenons pour le nettoyage en intérieur comme en extérieur, jusqu'à 8 mètres de haut (perche, échelle ou nacelle), à Annecy et jusqu'à 30 km alentours.",
+      description: "Fenêtres, baies vitrées, vérandas, verrières, vitrines de commerces… Nous intervenons pour le nettoyage en intérieur comme en extérieur (perche, échelle), à Annecy et jusqu'à 30 km alentours.",
       features: [
         'Intervention ponctuelle ou régulière',
         'Locaux professionnels, boutiques, maisons, appartements',
@@ -16,21 +16,21 @@ export default function Services() {
       ]
     },
     {
-      id: 'remise-etat',
+      id: 'showroom',
       icon: <FaTools className="text-[#C28638] text-4xl" />,
-      title: 'Remise en état – Nettoyage fin de chantier',
-      description: "Après travaux, déménagement ou changement de locataires : GR CLEAN assure un nettoyage en profondeur pour rendre vos locaux impeccables.",
+      title: 'Nettoyage de Showroom',
+      description: "Gardez votre showroom impeccable pour accueillir vos clients dans les meilleures conditions. Notre équipe assure un nettoyage minutieux et régulier.",
       features: [
-        'Dépoussiérage et décapage',
-        'Nettoyage des sols, murs, vitres et équipements',
-        'Particuliers, agences immobilières, entreprises'
+        'Entretien régulier',
+        'Nettoyage des surfaces d\'exposition',
+        'Vitrines et présentoirs'
       ]
     },
     {
       id: 'bureaux',
       icon: <FaBuilding className="text-[#C28638] text-4xl" />,
       title: 'Entretien de bureaux et locaux professionnels',
-      description: "Pour offrir un espace de travail propre et sain à vos collaborateurs. Intervention régulière ou ponctuelle, adaptée à vos horaires.",
+      description: "Pour offrir un espace de travail propre et sain à vos collaborateurs. Intervention régulière ou ponctuelle.",
       features: [
         'Nettoyage des bureaux, open-spaces, salles de réunion',
         'Vidage des corbeilles, dépoussiérage, sols, sanitaires',
@@ -52,10 +52,10 @@ export default function Services() {
       id: 'particuliers',
       icon: <FaHome className="text-[#C28638] text-4xl" />,
       title: 'Nettoyage chez les particuliers',
-      description: "GR CLEAN, ce n'est pas que pour les pros. Nous intervenons aussi dans les maisons et appartements privés, à Annecy et dans un rayon de 20 km.",
+      description: "GR CLEAN intervient chez les particuliers exclusivement pour le nettoyage de vitrerie, à Annecy et dans un rayon de 30 km.",
       features: [
-        'Nettoyage ponctuel',
-        'Adapté aux besoins de chaque foyer',
+        'Nettoyage ponctuel de vitres',
+        'Fenêtres, baies vitrées, vérandas',
         'Forfaits clairs, sur devis uniquement'
       ]
     }

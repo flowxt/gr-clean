@@ -18,8 +18,8 @@ export default function ZoneIntervention() {
     'La Balme-de-Sillingy',
     'Sillingy',
     'Rumilly',
-    'Aix-les-Bains',
-    'Albertville',
+    'Neydens',
+    'Archamps',
   ];
 
   return (
@@ -78,7 +78,7 @@ export default function ZoneIntervention() {
             
             <div className="mt-12 md:mt-16 pt-8 border-t border-gray-800">
               <p className="text-lg text-gray-300">
-                Nos services couvrent Annecy et les communes environnantes, avec une intervention rapide et efficace. Contactez-nous pour vérifier si votre adresse est dans notre zone d'intervention.
+                Nos services couvrent Annecy et les communes environnantes. Contactez-nous pour vérifier si votre adresse est dans notre zone d'intervention.
               </p>
             </div>
           </div>

@@ -1,8 +1,34 @@
 import { motion } from 'framer-motion';
-import { FaCalendarCheck, FaStar, FaArrowRight, FaShieldAlt } from 'react-icons/fa';
+import { useState } from 'react';
+import { FaCalendarCheck, FaStar, FaArrowRight, FaShieldAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Image from 'next/image';
 
 export default function CTA() {
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  
+  const testimonials = [
+    {
+      text: "GR CLEAN a réalisé un nettoyage impeccable de nos locaux professionnels. Équipe réactive, travail soigné et résultat au-delà de nos attentes. Je recommande vivement leurs services !",
+      name: "Alexandre M.",
+      position: "Directeur d'agence, Annecy",
+      initial: "A"
+    },
+    {
+      text: "L'appartement est nickel. Merci pour votre travail",
+      name: "Vanessa D.",
+      position: "Architecte",
+      initial: "V"
+    }
+  ];
+  
+  const nextTestimonial = () => {
+    setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
+  };
+  
+  const prevTestimonial = () => {
+    setTestimonialIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+  
   return (
     <section className="py-16 md:py-20 bg-gradient-to-br from-[#161616] to-[#212121] text-white relative overflow-hidden">
       {/* Éléments de design en arrière-plan */}
@@ -67,8 +93,8 @@ export default function CTA() {
                     <FaCalendarCheck className="w-5 h-5 text-[#C28638]" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1">Intervention rapide</h4>
-                    <p className="text-gray-400 text-sm">Déplacement sous 48h pour devis</p>
+                    <h4 className="font-semibold text-white mb-1">Devis sous 72h</h4>
+                    <p className="text-gray-400 text-sm">Réponse rapide à vos demandes</p>
                   </div>
                 </div>
                 
@@ -127,29 +153,71 @@ export default function CTA() {
                 </a>
               </motion.div>
               
-              {/* Témoignage client */}
+              {/* Témoignages clients avec navigation */}
               <motion.div 
-                className="bg-white/5 border border-white/10 rounded-xl p-6 mt-8 backdrop-blur-sm"
+                className="mt-8"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-center gap-2 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} className="text-[#C28638] w-4 h-4" />
-                  ))}
-                </div>
-                <p className="italic text-gray-300 text-sm mb-4">
-                  "GR CLEAN a réalisé un nettoyage impeccable de nos locaux professionnels. Équipe réactive, travail soigné et résultat au-delà de nos attentes. Je recommande vivement leurs services !"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-[#C28638]/30 rounded-full flex items-center justify-center text-[#C28638] font-bold">
-                    A
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm relative">
+                  <div className="flex items-center gap-2 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar key={i} className="text-[#C28638] w-4 h-4" />
+                    ))}
                   </div>
-                  <div>
-                    <p className="font-medium text-white">Alexandre M.</p>
-                    <p className="text-xs text-gray-400">Directeur d'agence, Annecy</p>
+                  
+                  <div className="min-h-[120px]">
+                    <motion.div
+                      key={testimonialIndex}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <p className="italic text-gray-300 text-sm mb-4">
+                        "{testimonials[testimonialIndex].text}"
+                      </p>
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-[#C28638]/30 rounded-full flex items-center justify-center text-[#C28638] font-bold">
+                          {testimonials[testimonialIndex].initial}
+                        </div>
+                        <div>
+                          <p className="font-medium text-white">{testimonials[testimonialIndex].name}</p>
+                          <p className="text-xs text-gray-400">{testimonials[testimonialIndex].position}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                  
+                  <div className="flex justify-between mt-6">
+                    <button 
+                      onClick={prevTestimonial}
+                      className="w-8 h-8 rounded-full bg-[#1a1a1a] border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#C28638] transition-colors"
+                      aria-label="Témoignage précédent"
+                    >
+                      <FaChevronLeft className="w-3 h-3" />
+                    </button>
+                    <div className="flex gap-2">
+                      {testimonials.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setTestimonialIndex(idx)}
+                          className={`w-2 h-2 rounded-full transition-all ${
+                            idx === testimonialIndex ? 'bg-[#C28638] w-6' : 'bg-gray-600 hover:bg-gray-500'
+                          }`}
+                          aria-label={`Aller au témoignage ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                    <button 
+                      onClick={nextTestimonial}
+                      className="w-8 h-8 rounded-full bg-[#1a1a1a] border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#C28638] transition-colors"
+                      aria-label="Témoignage suivant"
+                    >
+                      <FaChevronRight className="w-3 h-3" />
+                    </button>
                   </div>
                 </div>
               </motion.div>

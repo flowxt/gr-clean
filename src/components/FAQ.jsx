@@ -21,7 +21,7 @@ export default function FAQ() {
     },
     {
       question: "Comment sont calculés vos tarifs ?",
-      answer: "Nos tarifs sont établis au forfait, après une visite sur site pour évaluer précisément l'ampleur du travail. Nous vous fournissons ensuite un devis détaillé et transparent, sans surprises."
+      answer: "Nos tarifs sont établis au forfait, après une visite sur site ou sur photo pour évaluer précisément l'ampleur du travail. Nous vous fournissons ensuite un devis détaillé et transparent, sans surprises."
     },
     {
       question: "Fournissez-vous le matériel et les produits de nettoyage ?",
@@ -33,7 +33,7 @@ export default function FAQ() {
     },
     {
       question: "Quel est le délai pour obtenir un rendez-vous ?",
-      answer: "Nous nous efforçons de répondre rapidement à toutes les demandes. En général, nous pouvons organiser une visite pour établir un devis sous 48h à 72h. Pour les interventions urgentes, nous faisons notre maximum pour nous adapter."
+      answer: "Nous nous efforçons de répondre rapidement à toutes les demandes. En général, nous vous fournissons un devis sous 72h. Pour les interventions urgentes, nous faisons notre maximum pour nous adapter."
     }
   ];
 
