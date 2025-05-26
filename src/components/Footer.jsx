@@ -46,11 +46,7 @@ export default function Footer() {
                   Nettoyage de vitres
                 </Link>
               </li>
-              <li>
-                <Link href="#services" className="text-gray-400 hover:text-[#C28638] transition-colors">
-                  Nettoyage fin de chantier
-                </Link>
-              </li>
+              
               <li>
                 <Link href="#services" className="text-gray-400 hover:text-[#C28638] transition-colors">
                   Entretien de bureaux
