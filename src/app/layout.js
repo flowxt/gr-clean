@@ -1,5 +1,6 @@
 import { Montserrat, Lora } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -98,6 +99,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${montserrat.variable} ${lora.variable} antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
