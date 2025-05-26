@@ -1,8 +1,56 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaCalendarAlt, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaCalendarAlt, FaEnvelope, FaPhone, FaSpinner } from 'react-icons/fa';
 import SectionTag from './SectionTag';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setStatus('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        setStatus('error');
+        console.error('Erreur:', result.error);
+      }
+    } catch (error) {
+      setStatus('error');
+      console.error('Erreur lors de l\'envoi:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-16 md:py-24 bg-[#161616] text-white">
       <div className="container mx-auto px-4">
@@ -87,24 +135,48 @@ export default function Contact() {
           <div className="value-card p-8 rounded-xl">
             <h3 className="text-2xl font-bold mb-8 text-white">Formulaire de contact</h3>
             
-            <form>
+            {status === 'success' && (
+              <div className="mb-6 p-4 bg-green-600/20 border border-green-500 rounded-md">
+                <p className="text-green-400 text-sm">
+                  ✅ Votre message a été envoyé avec succès ! Nous vous répondrons rapidement.
+                </p>
+              </div>
+            )}
+            
+            {status === 'error' && (
+              <div className="mb-6 p-4 bg-red-600/20 border border-red-500 rounded-md">
+                <p className="text-red-400 text-sm">
+                  ❌ Erreur lors de l'envoi. Veuillez réessayer ou nous contacter directement.
+                </p>
+              </div>
+            )}
+            
+            <form onSubmit={handleSubmit}>
               <div className="mb-4">
-                <label htmlFor="name" className="block mb-2 text-gray-300">Nom</label>
+                <label htmlFor="name" className="block mb-2 text-gray-300">Nom *</label>
                 <input
                   type="text"
                   id="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 bg-[#1a1a1a] border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C28638] text-white"
                   placeholder="Votre nom"
+                  disabled={isLoading}
                 />
               </div>
               
               <div className="mb-4">
-                <label htmlFor="email" className="block mb-2 text-gray-300">Email</label>
+                <label htmlFor="email" className="block mb-2 text-gray-300">Email *</label>
                 <input
                   type="email"
                   id="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 bg-[#1a1a1a] border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C28638] text-white"
                   placeholder="Votre email"
+                  disabled={isLoading}
                 />
               </div>
               
@@ -113,26 +185,41 @@ export default function Contact() {
                 <input
                   type="tel"
                   id="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 bg-[#1a1a1a] border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C28638] text-white"
                   placeholder="Votre numéro de téléphone"
+                  disabled={isLoading}
                 />
               </div>
               
               <div className="mb-4">
-                <label htmlFor="message" className="block mb-2 text-gray-300">Message</label>
+                <label htmlFor="message" className="block mb-2 text-gray-300">Message *</label>
                 <textarea
                   id="message"
                   rows="4"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 bg-[#1a1a1a] border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C28638] text-white resize-none"
                   placeholder="Décrivez votre besoin"
+                  disabled={isLoading}
                 ></textarea>
               </div>
               
               <button
                 type="submit"
-                className="w-full cta-button py-3 px-6 rounded-md text-white font-medium"
+                disabled={isLoading}
+                className="w-full cta-button py-3 px-6 rounded-md text-white font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
-                Demander un devis
+                {isLoading ? (
+                  <>
+                    <FaSpinner className="animate-spin" />
+                    Envoi en cours...
+                  </>
+                ) : (
+                  'Demander un devis'
+                )}
               </button>
             </form>
           </div>
