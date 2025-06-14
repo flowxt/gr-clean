@@ -15,19 +15,27 @@ const lora = Lora({
 });
 
 export const metadata = {
-  title: "GR CLEAN - Nettoyage professionnel à Annecy",
+  title:
+    "GR CLEAN - Entreprise de nettoyage professionnel à Annecy et Sillingy",
   description:
-    "Experts du nettoyage et de la vitrerie pour professionnels et particuliers exigeants à Annecy et ses alentours. Plus de 15 ans d'expertise.",
+    "Entreprise de nettoyage professionnel à Annecy et Sillingy. Services de nettoyage pour entreprises, bureaux, locaux médicaux et particuliers. Plus de 15 ans d'expertise en Haute-Savoie.",
   metadataBase: new URL("https://www.gr-clean.fr"),
   keywords: [
-    "nettoyage",
+    "entreprise de nettoyage",
+    "nettoyage professionnel",
+    "entreprise de nettoyage Annecy",
+    "entreprise de nettoyage Sillingy",
+    "nettoyage bureaux Annecy",
+    "nettoyage locaux professionnels",
     "vitrerie",
     "entretien",
     "Annecy",
+    "Sillingy",
     "professionnel",
     "particulier",
-    "entreprise",
     "Haute-Savoie",
+    "nettoyage commercial",
+    "société de nettoyage",
   ],
   robots: {
     index: true,
@@ -44,9 +52,10 @@ export const metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "GR CLEAN - Nettoyage professionnel à Annecy",
+    title:
+      "GR CLEAN - Entreprise de nettoyage professionnel à Annecy et Sillingy",
     description:
-      "Experts du nettoyage et de la vitrerie pour professionnels et particuliers exigeants à Annecy et ses alentours.",
+      "Entreprise de nettoyage professionnel à Annecy et Sillingy. Services pour entreprises, bureaux et particuliers.",
     url: "https://www.gr-clean.fr",
     siteName: "GR CLEAN",
     locale: "fr_FR",
@@ -62,17 +71,94 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GR CLEAN - Nettoyage professionnel à Annecy",
+    title:
+      "GR CLEAN - Entreprise de nettoyage professionnel à Annecy et Sillingy",
     description:
-      "Experts du nettoyage et de la vitrerie à Annecy et ses alentours.",
+      "Entreprise de nettoyage professionnel à Annecy et Sillingy. Services pour entreprises et particuliers.",
     images: ["/logo_GR.jpg"],
   },
 };
 
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "GR CLEAN",
+    description:
+      "Entreprise de nettoyage professionnel à Annecy et Sillingy. Services pour bureaux, locaux commerciaux et particuliers.",
+    url: "https://www.gr-clean.fr",
+    telephone: "+33450230000",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Annecy",
+      addressRegion: "Haute-Savoie",
+      addressCountry: "FR",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "45.8992",
+      longitude: "6.1294",
+    },
+    serviceArea: {
+      "@type": "GeoCircle",
+      geoMidpoint: {
+        "@type": "GeoCoordinates",
+        latitude: "45.8992",
+        longitude: "6.1294",
+      },
+      geoRadius: "30000",
+    },
+    priceRange: "€€",
+    openingHours: "Mo-Fr 08:00-18:00",
+    areaServed: [
+      "Annecy",
+      "Sillingy",
+      "La Balme-de-Sillingy",
+      "Argonay",
+      "Poisy",
+      "Épagny",
+      "Rumilly",
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Services de nettoyage",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Nettoyage de bureaux",
+            description:
+              "Entreprise de nettoyage pour bureaux et locaux professionnels",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Nettoyage commercial",
+            description: "Services de nettoyage pour commerces et showrooms",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Vitrerie professionnelle",
+            description: "Nettoyage de vitres et vitrines",
+          },
+        },
+      ],
+    },
+  };
+
   return (
     <html lang="fr" className="scroll-smooth">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

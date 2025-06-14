@@ -48,7 +48,7 @@ export default function Hero() {
             className="mb-8 text-center pt-12 sm:pt-0"
           >
             <span className="inline-block py-1 px-3 border border-[#C28638] text-[#C28638] text-sm tracking-wider uppercase rounded-full mb-6">
-              Nettoyage professionnel à Annecy
+              Entreprise de nettoyage professionnel
             </span>
           </motion.div>
           
@@ -58,7 +58,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-[#C28638]">Le nettoyage professionnel</span> sur-mesure à Annecy et alentours
+            <span className="text-[#C28638]">Entreprise de nettoyage</span> à Annecy et Sillingy
           </motion.h1>
           
           <motion.p 
@@ -67,7 +67,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Experts du nettoyage et de la vitrerie, pour professionnels & particuliers exigeants.
+            Votre entreprise de nettoyage de confiance pour bureaux, locaux professionnels et particuliers exigeants à Annecy, Sillingy et environs.
           </motion.p>
           
           <motion.div

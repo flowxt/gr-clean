@@ -8,7 +8,7 @@ export default function Services() {
       id: 'vitrerie',
       icon: <FaWindowMaximize className="text-[#C28638] text-4xl" />,
       title: 'Vitrerie – Nettoyage de vitres et vitrines',
-      description: "Fenêtres, baies vitrées, vérandas, verrières, vitrines de commerces… Nous intervenons pour le nettoyage en intérieur comme en extérieur (perche, échelle), à Annecy et jusqu'à 30 km alentours.",
+      description: "Notre entreprise de nettoyage intervient pour les vitres de vos locaux : fenêtres, baies vitrées, vérandas, verrières, vitrines commerciales. Service en intérieur et extérieur à Annecy, Sillingy et dans un rayon de 30 km.",
       features: [
         'Intervention ponctuelle ou régulière',
         'Locaux professionnels, boutiques, maisons, appartements',
@@ -19,9 +19,9 @@ export default function Services() {
       id: 'showroom',
       icon: <FaTools className="text-[#C28638] text-4xl" />,
       title: 'Nettoyage de Showroom',
-      description: "Gardez votre showroom impeccable pour accueillir vos clients dans les meilleures conditions. Notre équipe assure un nettoyage minutieux et régulier.",
+      description: "Votre entreprise de nettoyage spécialisée dans l'entretien de showrooms à Annecy et Sillingy. Nous maintenons vos espaces d'exposition impeccables pour accueillir vos clients dans les meilleures conditions.",
       features: [
-        'Entretien régulier',
+        'Entretien régulier par notre entreprise',
         'Nettoyage des surfaces d\'exposition',
         'Vitrines et présentoirs'
       ]
@@ -30,7 +30,7 @@ export default function Services() {
       id: 'bureaux',
       icon: <FaBuilding className="text-[#C28638] text-4xl" />,
       title: 'Entretien de bureaux et locaux professionnels',
-      description: "Pour offrir un espace de travail propre et sain à vos collaborateurs. Intervention régulière ou ponctuelle.",
+      description: "GR CLEAN, entreprise de nettoyage à Annecy et Sillingy, assure l'entretien de vos bureaux pour offrir un espace de travail propre et sain à vos collaborateurs.",
       features: [
         'Nettoyage des bureaux, open-spaces, salles de réunion',
         'Vidage des corbeilles, dépoussiérage, sols, sanitaires',
@@ -41,7 +41,7 @@ export default function Services() {
       id: 'medicaux',
       icon: <FaHospital className="text-[#C28638] text-4xl" />,
       title: 'Nettoyage de locaux médicaux & spécialisés',
-      description: "Respect rigoureux des normes d'hygiène.",
+      description: "Notre entreprise de nettoyage respecte rigoureusement les normes d'hygiène pour vos locaux médicaux à Annecy, Sillingy et environs.",
       features: [
         'Cabinets médicaux et dentaires',
         'Laboratoires',
@@ -52,7 +52,7 @@ export default function Services() {
       id: 'particuliers',
       icon: <FaHome className="text-[#C28638] text-4xl" />,
       title: 'Nettoyage chez les particuliers',
-      description: "GR CLEAN intervient chez les particuliers exclusivement pour le nettoyage de vitrerie, à Annecy et dans un rayon de 30 km.",
+      description: "GR CLEAN, entreprise de nettoyage, intervient chez les particuliers exclusivement pour le nettoyage de vitrerie, à Annecy, Sillingy et dans un rayon de 30 km.",
       features: [
         'Nettoyage ponctuel de vitres',
         'Fenêtres, baies vitrées, vérandas',
@@ -73,10 +73,10 @@ export default function Services() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Nos prestations</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Services d'entreprise de nettoyage</h2>
           <div className="w-24 h-1 bg-[#C28638] mx-auto mb-8"></div>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Des solutions adaptées à tous vos besoins de nettoyage professionnel
+            GR CLEAN, votre entreprise de nettoyage à Annecy et Sillingy, propose des solutions adaptées à tous vos besoins professionnels
           </p>
         </motion.div>
 

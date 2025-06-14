@@ -48,13 +48,12 @@ export default function AboutUs() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Plus de 15 ans d'expertise</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Votre entreprise de nettoyage de confiance</h2>
           <div className="w-24 h-1 bg-[#C28638] mx-auto mb-8"></div>
           <p className="text-lg mb-8 text-gray-300 leading-relaxed">
-            Basée à Annecy, GR CLEAN est une entreprise locale de nettoyage spécialisée dans la vitrerie, 
-            le nettoyage de bureaux, commerces, maisons, locaux professionnels et médicaux.
-            Nous proposons des prestations flexibles, uniquement sur devis, 
-            avec une approche personnalisée et efficace.
+            Depuis plus de 15 ans, GR CLEAN est l'entreprise de nettoyage de référence à Annecy, Sillingy et à 30 kilomètres de ces villes. 
+            Spécialisée dans la vitrerie, le nettoyage de bureaux, commerces, maisons et locaux professionnels, 
+            notre entreprise de nettoyage propose des prestations sur-mesure adaptées à vos besoins spécifiques.
           </p>
         </motion.div>
 
