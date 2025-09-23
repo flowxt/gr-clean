@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,13 +9,11 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 // Composant pour la navigation mobile et tablette
 function MobileNav({ isOpen, setIsOpen }) {
   const navLinks = [
-    { name: 'Accueil', href: '#' },
-    { name: 'À propos', href: '#expertise' },
-    { name: 'Services', href: '#services' },
-    { name: 'Zone d\'intervention', href: '#zone' },
-    { name: 'Galerie', href: '#gallery' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Accueil', href: '/' },
+    { name: 'À propos', href: '/a-propos' },
+    { name: 'Services', href: '/services' },
+    { name: 'Zone d\'intervention', href: '/zones-intervention' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   // Scroll vers le haut lors de l'ouverture du menu
@@ -23,19 +23,8 @@ function MobileNav({ isOpen, setIsOpen }) {
     }
   }, [isOpen]);
 
-  const handleLinkClick = (e, href) => {
-    e.preventDefault();
+  const handleLinkClick = () => {
     setIsOpen(false);
-    
-    // Petit délai pour permettre la fermeture du menu avant la navigation
-    setTimeout(() => {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      } else if (href === '#') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    }, 300);
   };
 
   // Si le menu n'est pas ouvert, ne rien afficher
@@ -67,22 +56,22 @@ function MobileNav({ isOpen, setIsOpen }) {
       {/* Navigation */}
       <nav className="flex flex-col items-center w-full p-6 pt-12">
         {navLinks.map((link, index) => (
-          <a
+          <Link
             key={index}
             href={link.href}
             className="text-white hover:text-[#C28638] transition-colors text-xl uppercase tracking-wider font-medium w-full text-center py-4 border-b border-gray-800 last:border-0"
-            onClick={(e) => handleLinkClick(e, link.href)}
+            onClick={handleLinkClick}
           >
             {link.name}
-          </a>
+          </Link>
         ))}
-        <a 
-          href="#contact"
+        <Link 
+          href="/contact"
           className="cta-button mt-8 px-6 py-4 rounded-md text-white font-medium shadow-md w-full text-center"
-          onClick={(e) => handleLinkClick(e, '#contact')}
+          onClick={handleLinkClick}
         >
           Demander un devis
-        </a>
+        </Link>
       </nav>
     </div>
   );
@@ -108,13 +97,11 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: 'Accueil', href: '#' },
-    { name: 'À propos', href: '#expertise' },
-    { name: 'Services', href: '#services' },
-    { name: 'Zone d\'intervention', href: '#zone' },
-    { name: 'Galerie', href: '#gallery' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Accueil', href: '/' },
+    { name: 'À propos', href: '/a-propos' },
+    { name: 'Services', href: '/services' },
+    { name: 'Zone d\'intervention', href: '/zones-intervention' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   // Fonction pour bloquer le défilement du body quand le menu est ouvert
@@ -160,12 +147,12 @@ export default function Header() {
                   {link.name}
                 </Link>
               ))}
-              <a 
-                href="#contact"
+              <Link 
+                href="/contact"
                 className="cta-button px-5 py-2.5 rounded-md text-white font-medium shadow-md"
               >
                 Demander un devis
-              </a>
+              </Link>
             </nav>
             
             {/* Bouton menu mobile/tablette */}

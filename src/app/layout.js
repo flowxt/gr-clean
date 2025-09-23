@@ -87,7 +87,7 @@ export default function RootLayout({ children }) {
     description:
       "Entreprise de nettoyage professionnel à Annecy et Sillingy. Services pour bureaux, locaux commerciaux et particuliers.",
     url: "https://www.gr-clean.fr",
-    telephone: "+33450230000",
+    telephone: "+33689805698",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Annecy",

@@ -2,15 +2,10 @@
 
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import AboutUs from "@/components/AboutUs";
-import Services from "@/components/Services";
-import BeforeAfter from "@/components/BeforeAfter";
-import ZoneIntervention from "@/components/ZoneIntervention";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import Gallery from "@/components/Gallery";
-import CTA from "@/components/CTA";
-import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
+import HomeAbout from "@/components/home/HomeAbout";
+import HomeServices from "@/components/home/HomeServices";
+import HomeTestimonials from "@/components/home/HomeTestimonials";
+import HomeCTA from "@/components/home/HomeCTA";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -19,15 +14,10 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <AboutUs />
-        <Services />
-        <BeforeAfter />
-        <ZoneIntervention />
-        <WhyChooseUs />
-        <Gallery />
-        <CTA />
-        <FAQ />
-        <Contact />
+        <HomeAbout />
+        <HomeServices />
+        <HomeTestimonials />
+        <HomeCTA />
       </main>
       <Footer />
     </div>
