@@ -6,27 +6,27 @@ import { FaPhone, FaClipboardCheck, FaCalendarAlt, FaTools, FaStar } from 'react
 export default function ServiceProcess() {
   const steps = [
     {
-      icon: <FaPhone className="text-3xl text-[#C28638]" />,
+      icon: <FaPhone className="text-3xl text-white" />,
       title: "Demande de devis",
       description: "Contactez-nous par téléphone ou formulaire. Nous analysons vos besoins et vous proposons une solution sur-mesure."
     },
     {
-      icon: <FaClipboardCheck className="text-3xl text-[#C28638]" />,
+      icon: <FaClipboardCheck className="text-3xl text-white" />,
       title: "Évaluation et devis",
       description: "Visite sur site ou évaluation sur photos. Devis détaillé et transparent sous 48h, sans engagement."
     },
     {
-      icon: <FaCalendarAlt className="text-3xl text-[#C28638]" />,
+      icon: <FaCalendarAlt className="text-3xl text-white" />,
       title: "Planification",
       description: "Organisation de l'intervention selon vos contraintes horaires. Confirmation du rendez-vous et des modalités."
     },
     {
-      icon: <FaTools className="text-3xl text-[#C28638]" />,
+      icon: <FaTools className="text-3xl text-white" />,
       title: "Intervention",
       description: "Exécution professionnelle avec matériel adapté. Respect des délais et des normes de sécurité."
     },
     {
-      icon: <FaStar className="text-3xl text-[#C28638]" />,
+      icon: <FaStar className="text-3xl text-white" />,
       title: "Contrôle qualité",
       description: "Vérification du résultat et de votre satisfaction. Suivi post-intervention si nécessaire."
     }

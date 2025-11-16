@@ -153,7 +153,11 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="fr" className="scroll-smooth">
+    <html
+      lang="fr"
+      className="scroll-smooth light"
+      style={{ colorScheme: "light" }}
+    >
       <head>
         <script
           type="application/ld+json"

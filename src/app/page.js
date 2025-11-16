@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HomeAbout from "@/components/home/HomeAbout";
 import HomeServices from "@/components/home/HomeServices";
+import BeforeAfter from "@/components/BeforeAfter";
 import HomeTestimonials from "@/components/home/HomeTestimonials";
 import HomeCTA from "@/components/home/HomeCTA";
 import Footer from "@/components/Footer";
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <HomeAbout />
         <HomeServices />
+        <BeforeAfter />
         <HomeTestimonials />
         <HomeCTA />
       </main>
