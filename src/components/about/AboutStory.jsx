@@ -1,36 +1,9 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { FaCalendarAlt, FaUsers, FaTrophy, FaMapMarkerAlt } from 'react-icons/fa';
 import Image from 'next/image';
 
 export default function AboutStory() {
-  const milestones = [
-    {
-      icon: <FaCalendarAlt className="text-2xl text-[#C28638]" />,
-      title: "2008",
-      subtitle: "Création de GR CLEAN",
-      description: "Lancement de notre entreprise de nettoyage à Annecy avec une vision : offrir un service de qualité irréprochable."
-    },
-    {
-      icon: <FaUsers className="text-2xl text-[#C28638]" />,
-      title: "2012",
-      subtitle: "Développement de l'équipe",
-      description: "Constitution d'une équipe d'experts spécialisés dans différents domaines du nettoyage professionnel."
-    },
-    {
-      icon: <FaMapMarkerAlt className="text-2xl text-[#C28638]" />,
-      title: "2016",
-      subtitle: "Extension à Sillingy",
-      description: "Élargissement de notre zone d'intervention pour mieux servir la région d'Annecy et ses communes environnantes."
-    },
-    {
-      icon: <FaTrophy className="text-2xl text-[#C28638]" />,
-      title: "2023",
-      subtitle: "15 ans d'excellence",
-      description: "Plus de 15 ans d'expertise, des centaines de clients satisfaits et une réputation solidement établie."
-    }
-  ];
 
   return (
     <section className="py-16 md:py-24 bg-[#121212]">
@@ -65,22 +38,22 @@ export default function AboutStory() {
             </h3>
             <div className="space-y-6 text-gray-300">
               <p className="leading-relaxed">
-                GR CLEAN est née en 2008 de la passion de créer une entreprise de nettoyage 
+                GR CLEAN est née de la volonté de créer une entreprise de nettoyage 
                 différente, axée sur la qualité, la fiabilité et la proximité avec ses clients. 
-                Basée à Annecy, notre entreprise s'est rapidement développée pour devenir 
-                une référence dans la région.
+                Basée à Annecy, notre entreprise s'est développée pour devenir 
+                une référence dans la région grâce à notre exigence de qualité constante.
               </p>
               <p className="leading-relaxed">
-                Au fil des années, nous avons étendu nos services et notre zone d'intervention 
-                pour répondre aux besoins croissants de nos clients. Aujourd'hui, nous 
-                intervenons à Annecy, Sillingy et dans toute la région, avec la même 
-                exigence de qualité qui nous anime depuis le premier jour.
+                Forte de plusieurs années d'expérience, nous avons étendu nos services 
+                et notre zone d'intervention pour répondre aux besoins de nos clients. 
+                Aujourd'hui, nous intervenons à Annecy, Sillingy et dans toute la région, 
+                toujours avec le même engagement qualité qui nous caractérise.
               </p>
               <p className="leading-relaxed">
                 Notre équipe s'est agrandie et spécialisée, nous permettant d'offrir 
                 des services adaptés à tous types de locaux : bureaux, commerces, 
                 locaux médicaux et résidences privées. Chaque intervention est menée 
-                avec le plus grand professionnalisme.
+                avec le plus grand professionnalisme et le souci du détail.
               </p>
             </div>
           </motion.div>
@@ -139,38 +112,6 @@ export default function AboutStory() {
             </div>
           </motion.div>
         </div>
-
-        {/* Timeline */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-bold text-white text-center mb-12">
-            Les grandes étapes de notre développement
-          </h3>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {milestones.map((milestone, index) => (
-              <motion.div 
-                key={index}
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="w-16 h-16 bg-[#C28638] rounded-full flex items-center justify-center mx-auto mb-4">
-                  {milestone.icon}
-                </div>
-                <h4 className="text-2xl font-bold text-[#C28638] mb-2">{milestone.title}</h4>
-                <h5 className="text-lg font-semibold text-white mb-3">{milestone.subtitle}</h5>
-                <p className="text-gray-300 text-sm">{milestone.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );
