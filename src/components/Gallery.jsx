@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
@@ -12,25 +14,28 @@ export default function Gallery() {
   const carouselRef = useRef(null);
 
   const photos = [
-    { src: '/photo/vitre-echelle.jpeg', alt: 'Nettoyage de vitres en hauteur' },
-    { src: '/photo/vitrage.jpeg', alt: 'Vitrage propre' },
-    { src: '/photo/vitre-propre.jpeg', alt: 'Vitre nettoyée' },
-    { src: '/photo/sdb1.jpeg', alt: 'Salle de bain moderne nettoyée' },
-    { src: '/photo/sdb2.jpeg', alt: 'Entretien salle de bain design' },
-    { src: '/photo/magasin.jpeg', alt: 'Nettoyage d\'espace commercial' },
-    { src: '/photo/magasin1.jpeg', alt: 'Entretien bureaux professionnels' },
-    { src: '/photo/bureau-proprete.jpeg', alt: 'Bureau propre' },
-    { src: '/photo/proprete-bureau.jpeg', alt: 'Propreté de bureau' },
-    { src: '/photo/vitre-ext1.jpeg', alt: 'Nettoyage vitre extérieure' },
-    { src: '/photo/bureau-vitre1.jpeg', alt: 'Vitre de bureau' },
-    { src: '/photo/vitre-bureau.jpeg', alt: 'Vitre de bureau propre' },
-    { src: '/photo/vitrage propre.jpeg', alt: 'Vitrage propre' },
-    { src: '/photo/vitre-int1.jpeg', alt: 'Vitre intérieure' },
-    { src: '/photo/garage-propre.jpeg', alt: 'Garage propre' },
-    { src: '/photo/garage-propre2.jpeg', alt: 'Garage nettoyé' },
-    { src: '/photo/garage-1.jpeg', alt: 'Nettoyage porte de garage' },
-    { src: '/photo/mur-vitre.jpeg', alt: 'Mur vitré' },
-    { src: '/photo/vitre-interieur.jpeg', alt: 'Vitre intérieure' },
+    { src: '/photo/angle-vitre.jpeg', alt: 'Nettoyage vitrerie professionnelle Annecy' },
+    { src: '/photo/bureau.jpeg', alt: 'Bureau professionnel nettoyé Annecy' },
+    { src: '/photo/carrelage.jpeg', alt: 'Entretien carrelage professionnel Annecy' },
+    { src: '/photo/en-cours-de-lavage.jpeg', alt: 'Nettoyage en cours Annecy' },
+    { src: '/photo/espace-vitre.jpeg', alt: 'Espace vitré professionnel Annecy' },
+    { src: '/photo/evier.jpeg', alt: 'Nettoyage cuisine professionnelle Annecy' },
+    { src: '/photo/grand-bureau.jpeg', alt: 'Grand bureau nettoyé Annecy' },
+    { src: '/photo/moquette.jpeg', alt: 'Entretien moquette bureaux Annecy' },
+    { src: '/photo/moquette2.jpeg', alt: 'Nettoyage moquette professionnelle Annecy' },
+    { src: '/photo/moquette3.jpeg', alt: 'Moquette bureaux propre Annecy' },
+    { src: '/photo/parquet.jpeg', alt: 'Parquet entretenu Annecy' },
+    { src: '/photo/sol.jpeg', alt: 'Sol professionnel nettoyé Annecy' },
+    { src: '/photo/vitre-9.jpeg', alt: 'Vitres professionnelles Annecy' },
+    { src: '/photo/vitre-open.jpeg', alt: 'Vitrerie ouverte nettoyée Annecy' },
+    { src: '/photo/vitre-echelle.jpeg', alt: 'Nettoyage vitres en hauteur Annecy' },
+    { src: '/photo/vitrage.jpeg', alt: 'Vitrage propre Annecy' },
+    { src: '/photo/vitre-propre.jpeg', alt: 'Vitre professionnelle Annecy' },
+    { src: '/photo/magasin.jpeg', alt: 'Nettoyage espace commercial Annecy' },
+    { src: '/photo/magasin1.jpeg', alt: 'Entretien bureaux Annecy' },
+    { src: '/photo/bureau-proprete.jpeg', alt: 'Bureau propre Annecy' },
+    { src: '/photo/vitre-ext1.jpeg', alt: 'Nettoyage vitre extérieure Annecy' },
+    { src: '/photo/garage-propre.jpeg', alt: 'Garage nettoyé Annecy' },
   ];
 
   const nextSlide = () => {
@@ -110,10 +115,10 @@ export default function Gallery() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Galerie de réalisations</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Nos réalisations de nettoyage à Annecy</h2>
           <div className="w-24 h-1 bg-[#C28638] mx-auto mb-8"></div>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Découvrez notre savoir-faire à travers nos interventions
+            Découvrez nos interventions de nettoyage professionnel réalisées à Annecy et dans toute la région
           </p>
         </motion.div>
 

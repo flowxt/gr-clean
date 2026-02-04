@@ -107,8 +107,8 @@ export default function HomeTestimonials() {
                 <div className="text-sm text-gray-400">Années d'expérience</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#C28638]">300+</div>
-                <div className="text-sm text-gray-400">Interventions/mois</div>
+                <div className="text-2xl font-bold text-[#C28638]">24h</div>
+                <div className="text-sm text-gray-400">Délai de réponse</div>
               </div>
             </div>
           </div>

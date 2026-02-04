@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
   try {
-    const { name, email, phone, message } = await request.json();
+    const { name, email, phone, service, message } = await request.json();
 
     // Validation des données
     if (!name || !email || !message) {
@@ -31,6 +31,7 @@ export async function POST(request) {
             <p><strong>Nom :</strong> ${name}</p>
             <p><strong>Email :</strong> <a href="mailto:${email}">${email}</a></p>
             ${phone ? `<p><strong>Téléphone :</strong> <a href="tel:${phone}">${phone}</a></p>` : ""}
+            ${service ? `<p><strong>Service souhaité :</strong> ${service}</p>` : ""}
           </div>
           
           <div style="background-color: #fff; padding: 20px; border-left: 4px solid #C28638; margin: 20px 0;">

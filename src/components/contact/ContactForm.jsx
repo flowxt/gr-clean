@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaPaperPlane } from 'react-icons/fa';
+import { FaPaperPlane, FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -12,6 +12,8 @@ export default function ContactForm() {
     service: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
 
   const services = [
     'Vitrerie - Nettoyage de vitres',
@@ -27,12 +29,35 @@ export default function ContactForm() {
       ...formData,
       [e.target.name]: e.target.value
     });
+    setSubmitStatus(null);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Ici vous pouvez ajouter la logique d'envoi du formulaire
-    console.log('Formulaire soumis:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Une erreur s'est produite");
+      }
+
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+    } catch (err) {
+      setSubmitStatus('error');
+      console.error(err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -137,12 +162,33 @@ export default function ContactForm() {
           />
         </div>
 
+        {submitStatus === 'success' && (
+          <div className="flex items-center gap-3 p-4 rounded-lg bg-green-500/20 border border-green-500/50 text-green-400">
+            <FaCheckCircle className="text-xl flex-shrink-0" />
+            <p>Votre message a bien été envoyé. Nous vous recontacterons sous 48h.</p>
+          </div>
+        )}
+
+        {submitStatus === 'error' && (
+          <div className="flex items-center gap-3 p-4 rounded-lg bg-red-500/20 border border-red-500/50 text-red-400">
+            <FaExclamationCircle className="text-xl flex-shrink-0" />
+            <p>L&apos;envoi a échoué. Vous pouvez nous appeler au 06 89 80 56 98 ou réessayer plus tard.</p>
+          </div>
+        )}
+
         <button
           type="submit"
-          className="w-full bg-[#C28638] hover:bg-[#A66B2A] text-white font-medium py-4 px-6 rounded-lg transition-colors flex items-center justify-center"
+          disabled={isSubmitting}
+          className="w-full bg-[#C28638] hover:bg-[#A66B2A] disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-4 px-6 rounded-lg transition-colors flex items-center justify-center"
         >
-          <FaPaperPlane className="mr-2" />
-          Envoyer ma demande
+          {isSubmitting ? (
+            <>Envoi en cours...</>
+          ) : (
+            <>
+              <FaPaperPlane className="mr-2" />
+              Envoyer ma demande
+            </>
+          )}
         </button>
 
         <p className="text-gray-400 text-sm">

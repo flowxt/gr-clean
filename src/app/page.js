@@ -5,6 +5,8 @@ import Hero from "@/components/Hero";
 import HomeAbout from "@/components/home/HomeAbout";
 import HomeServices from "@/components/home/HomeServices";
 import BeforeAfter from "@/components/BeforeAfter";
+import HomeAnnecy from "@/components/home/HomeAnnecy";
+import Gallery from "@/components/Gallery";
 import HomeTestimonials from "@/components/home/HomeTestimonials";
 import HomeCTA from "@/components/home/HomeCTA";
 import Footer from "@/components/Footer";
@@ -18,6 +20,8 @@ export default function Home() {
         <HomeAbout />
         <HomeServices />
         <BeforeAfter />
+        <HomeAnnecy />
+        <Gallery />
         <HomeTestimonials />
         <HomeCTA />
       </main>

@@ -159,8 +159,8 @@ export default function AboutValues() {
                       <div className="text-xs text-gray-400">Années</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-[#C28638]">300+</div>
-                      <div className="text-xs text-gray-400">Clients</div>
+                      <div className="text-2xl font-bold text-[#C28638]">Devis</div>
+                      <div className="text-xs text-gray-400">Gratuits</div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-[#C28638]">100%</div>
